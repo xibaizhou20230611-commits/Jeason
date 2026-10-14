@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>就选这个！ · 给纠结放个假</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#ffc4d6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="就选这个"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" type="image/png" href="icon-192.png"><script src="pwa.js" defer></script></head>
+<body>
+<header><a href="./index.html">✳ 就选这个！</a><span>小决定，轻松一点。</span></header>
+<main>
+<section class="intro"><h1>别纠结了，<br class="mobile">就选这个。</h1><p>把选项放进来，让运气给你一个小小的推力。</p></section>
+<section class="app-tools" aria-label="安装与分享"><button id="install-app" class="text-button">添加到手机桌面</button><button id="share-app" class="text-button">分享给朋友</button><span id="offline-status" role="status">正在准备离线使用…</span><p id="app-message" role="status" hidden></p><details id="install-help"><summary>怎么安装到桌面？</summary><p>iPhone：用 Safari 打开网址，点分享，再选择「添加到主屏幕」。安卓：用 Chrome 等支持的浏览器打开，点菜单中的「安装应用」或「添加到主屏幕」。电脑：使用 Chrome 或 Edge 的安装入口。具体名称随浏览器而异。</p><p>首次联网打开并显示「离线已就绪」后，即可离线抽签。微信内没有安装入口时，请选择在浏览器中打开。清除浏览器数据会清除本地记录和离线内容。</p></details></section>
+<nav aria-label="常用场景"><button data-scene="food" aria-pressed="true">🍜 今天吃什么</button><button data-scene="weekend" aria-pressed="false">🛼 周末去哪儿</button><button data-scene="break" aria-pressed="false">🌱 休息做点啥</button><button data-scene="custom" aria-pressed="false">✎ 自己出题</button></nav>
+<div class="workspace">
+<section class="editor" aria-labelledby="editor-title"><div class="section-title"><h2 id="editor-title">你的纠结清单</h2><span id="count"></span></div>
+<label for="question">这次想决定什么？</label><input id="question" maxlength="60" value="今天吃什么？">
+<label for="options">有哪些选项？<span>每行一个，可以直接增删</span></label><textarea id="options" rows="6" maxlength="3000" spellcheck="false">火锅
+面条
+饺子</textarea><p class="hint">空行和重复选项会自动忽略，每项机会相同。</p>
+<label class="switch"><input type="checkbox" id="no-repeat"><span>一轮内不重复抽取</span></label><p id="remaining" class="hint"></p>
+<div class="editor-footer"><button id="reset-round" class="text-button">重新开始一轮</button><span id="save-status">自动保存在当前浏览器</span></div>
+</section>
+<section class="ticket" aria-labelledby="ticket-question"><div class="ticket-top"><span>你的幸运签</span><span aria-hidden="true">✦</span></div><h2 id="ticket-question">今天吃什么？</h2><div class="answer-zone" role="status" aria-live="polite" aria-atomic="true"><p id="result-label">准备好了，就抽一签</p><p id="result">?</p><p id="result-note">答案出现的那一刻，留意你的第一反应。</p></div><div class="ticket-bottom"><button id="choose" class="primary">帮我选一个 <span aria-hidden="true">✳</span></button><button id="accept" class="accept" hidden>就它了！</button><p id="feedback">不用想得太完美，先迈出一小步。</p></div></section>
+</div>
+<section class="history" aria-labelledby="history-title"><div class="section-title"><h2 id="history-title">最近的选择</h2><button id="clear-history" class="text-button">清空记录</button></div><p id="empty-history">还没有抽过签。你的第一个小决定，从这里开始。</p><ol id="history-list"></ol></section>
+</main><footer><span>为生活里的小纠结而做</span><span>选项和记录仅保存在当前浏览器</span></footer>
+</body></html>
